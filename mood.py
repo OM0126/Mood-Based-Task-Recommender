@@ -1,19 +1,15 @@
 import random
-mood = input("Enter your mood (happy/sad/tired/bored): ").lower()
+moods = {
+    "happy" : ["GO FOR A RUN", "START A NEW PROJECT"],
+    "sad" : ["TALK TO A FRIEND", "LISTEN TO MUSIC"],
+    "tired" : ["GET SOME SLEEP", "TAKE A NAP"],
+    "bored" : ["PLAY A GAME", "WATCH YOUTUBE", "TRY CODING CHALLENGE"]
+}
 
-if mood == "happy":
-    h = random.choice(["go for a run", "start a new project", "bake a treat"])
-    print(h)
-elif mood == "sad":
-    s = random.choice(["talk to a friend", "listen to music"])
-    print(s)
-elif mood == "tired":
-    t = random.choice(["get some sleep", "take a nap"])
-    print(t)
-elif mood == "bored":
-    b = random.choice(["play a game", "watch youtube", "try coding challenge"])
-    print(b)
+m = input("ENTER UR MOOD (HAPPY/SAD/TIRED/BORAD):").lower()
+
+if m in moods:
+    suggestion = random.choice(moods[m])
+    print("u should:", suggestion)
 else:
-    print("mood not recognized, try again")
-
-
+    print("MOOD NOT RECOGNIZED, TRY AGAIN")
